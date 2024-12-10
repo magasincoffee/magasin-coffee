@@ -1,18 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MAGASIN Coffee</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGASIN Coffee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: url('https://source.unsplash.com/1600x400/?coffee') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #8B4513;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d2691e;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .menu, .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #f8f8f8;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to MAGASIN Coffee!</h1>
-  <p>Enjoy our refreshing drinks and premium coffee selections!</p>
-  <p>Visit us at one of our three locations in Can Tho.</p>
+    <header>
+        <h1>Welcome to MAGASIN Coffee</h1>
+        <p>Your perfect coffee, every day!</p>
+    </header>
+
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>MAGASIN Coffee is your go-to destination for premium coffee and refreshing drinks. Visit us today!</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?latte" alt="Latte">
+                <h3>GU TỈNH TÁO</h3>
+                <p>Cà phê đậm đà và latte thơm ngon.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?smoothie" alt="Smoothie">
+                <h3>GU NGỌT NGÀO</h3>
+                <p>Thức uống ngọt dịu, phù hợp cho mọi lứa tuổi.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?iced-tea" alt="Iced Tea">
+                <h3>GU THANH MÁT</h3>
+                <p>Trà giải nhiệt tuyệt vời trong ngày nắng.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?refreshment" alt="Refreshing Drink">
+                <h3>GU ĐÃ KHÁT</h3>
+                <p>Thỏa mãn cơn khát với nước uống sảng khoái.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations">
+        <h2>Our Locations</h2>
+        <div class="locations">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?cafe" alt="Location 1">
+                <h3>82A Nguyễn Văn Cừ Nối Dài, An Bình</h3>
+                <p>Come visit our cozy branch.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?city-cafe" alt="Location 2">
+                <h3>163 Nguyễn Văn Cừ Nối Dài, An Khánh</h3>
+                <p>Perfect for a quick coffee break!</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?university-cafe" alt="Location 3">
+                <h3>Số 94, đường 3/2, đối diện Đại học Cần Thơ</h3>
+                <p>Your favorite spot near the university.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@magasincoffee.com</p>
+        <p>Phone: 0901 234 567</p>
+    </section>
+
+    <footer>
+        <p>© 2024 MAGASIN Coffee. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
