@@ -19,22 +19,20 @@
             color: white;
             text-align: center;
             padding: 1.5em 0;
-            position: relative;
         }
-        .back-button {
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
             text-decoration: none;
-            background-color: white;
-            color: #48accc;
-            padding: 10px 20px;
-            border-radius: 5px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            margin: 0 15px;
             font-weight: bold;
-            border: 2px solid #48accc;
         }
-        .back-button:hover {
-            background-color: #f0f0f0;
+        nav a:hover {
             color: #48accc;
         }
         .store-section {
@@ -67,11 +65,16 @@
 </head>
 <body>
     <header>
-        <!-- Nút Trở về Trang Chủ -->
-        <a href="index.html" class="back-button">← Trở về</a>
         <h1>Our Stores</h1>
         <p>Khám phá các cửa hàng MAGASIN Coffee gần bạn!</p>
     </header>
+
+    <nav>
+        <a href="index.html">TRANG CHỦ</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+        <a href="contact.html">LIÊN HỆ</a>
+    </nav>
 
     <section class="store-section">
         <div class="store-item">
