@@ -35,30 +35,34 @@
         nav a:hover {
             color: #48accc;
         }
-        .store-section {
+        .content {
+            display: flex;
             padding: 20px;
-            text-align: center;
         }
-        .store-item {
-            margin: 15px 0;
-            border: 1px solid #ccc;
-            padding: 15px;
+        .store-list {
+            width: 30%;
+            background-color: black;
+            color: white;
+            padding: 20px;
             border-radius: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #f9f9f9;
+            margin-right: 20px;
         }
-        .store-item h2 {
-            margin-bottom: 10px;
+        .store-list h2 {
+            color: #48accc;
         }
-        .store-item p {
-            margin: 5px 0;
+        .store-list p {
+            margin: 10px 0;
+            border-bottom: 1px solid #48accc;
+            padding-bottom: 10px;
+        }
+        .map {
+            width: 70%;
+            border-radius: 8px;
         }
         iframe {
             border: 0;
             width: 100%;
-            height: 300px;
+            height: 500px;
             border-radius: 8px;
         }
     </style>
@@ -76,25 +80,16 @@
         <a href="contact.html">LIÊN HỆ</a>
     </nav>
 
-    <section class="store-section">
-        <div class="store-item">
-            <h2>82A Nguyễn Văn Cừ Nối Dài, An Bình</h2>
-            <p>Thời gian hoạt động: 6:00 - 22:00</p>
-            <p>Số điện thoại: 1900 3013</p>
+    <div class="content">
+        <div class="store-list">
+            <h2>TÌM KIẾM CỬA HÀNG</h2>
+            <p>82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
+            <p>163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
+            <p>Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
+        </div>
+        <div class="map">
             <iframe src="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <div class="store-item">
-            <h2>163 Nguyễn Văn Cừ Nối Dài, An Khánh</h2>
-            <p>Thời gian hoạt động: 6:00 - 22:00</p>
-            <p>Số điện thoại: 1900 3013</p>
-            <iframe src="https://maps.google.com/maps?q=163%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Khánh&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="store-item">
-            <h2>Số 94, Đường 3/2, đối diện Đại học Cần Thơ</h2>
-            <p>Thời gian hoạt động: 6:00 - 22:00</p>
-            <p>Số điện thoại: 1900 3013</p>
-            <iframe src="https://maps.google.com/maps?q=Số%2094,%20Đường%203/2,%20Cần%20Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
