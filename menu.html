@@ -141,15 +141,39 @@
             background-color: #ffffff;
             color: black;
         }
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav img {
+                margin-bottom: 10px;
+            }
+            nav a {
+                margin: 5px 0;
+            }
             .content {
-                flex-wrap: nowrap;
+                flex-direction: column;
             }
             .categories {
-                width: 20%;
+                max-width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #ddd;
+                margin-bottom: 20px;
             }
-            .menu-items {
-                flex: 1;
+            footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+            footer input[type="email"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            footer button {
+                width: 100%;
             }
         }
     </style>
