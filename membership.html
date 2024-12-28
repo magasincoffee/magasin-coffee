@@ -174,9 +174,9 @@
     </nav>
 
     <div class="content">
-        <h1>Thẻ Thành Viên</h1>
+        <h1>Thẻ Thành Viên@@</h1>
         <p>Chào mừng bạn đến với chương trình Thẻ Thành Viên của MAGASIN Coffee! Tham gia ngay để nhận được các ưu đãi đặc biệt và tích lũy điểm thưởng mỗi lần mua hàng.</p>
-        <h2>Quyền Lợi Khi Sở Hữu Thẻ!!!</h2>
+        <h2>Quyền Lợi Khi Sở Hữu Thẻ@@</h2>
         <ul>
             <li>Nhận ngay 10% giảm giá khi mua hàng.</li>
             <li>Tích lũy điểm thưởng để đổi quà.</li>
@@ -233,22 +233,20 @@
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
 
-           fetch('https://script.google.com/macros/s/AKfycbzJMFeGwGGOcEoWOkG0zDL3wkq55VdHFRRNYaf23ilaSs1zWRrMdbMDIkzSVcB9OZlB1g/exec', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    mode: 'cors', // Thêm dòng này
-    body: JSON.stringify({ name, phone, email }),
-})
-.then(response => response.json())
-.then(data => {
-    document.getElementById('response-message').textContent = data.message;
-})
-.catch(error => {
-    document.getElementById('response-message').textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
-});
-
+            fetch('https://script.google.com/macros/s/AKfycbyV9L6ogjLVLMYK4aCxblDmaSYbSKDuUpuLxbsTvkvG6AuvUrU-9YFlyVodGbORTOwW/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, phone, email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response-message').textContent = data.message;
+            })
+            .catch(error => {
+                document.getElementById('response-message').textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
+            });
         });
     </script>
 </body>
