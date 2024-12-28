@@ -14,26 +14,25 @@
             padding: 0;
             box-sizing: border-box;
         }
-        header {
-            background-color: #48accc;
-            color: white;
-            text-align: center;
-            padding: 1.5em 0;
-        }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: black;
-            padding: 10px 0;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #48accc;
+            padding: 0.5em 1em;
+        }
+        nav img {
+            height: 50px;
+            cursor: pointer;
         }
         nav a {
-            color: white;
-            text-decoration: none;
             margin: 0 15px;
+            text-decoration: none;
+            color: white;
             font-weight: bold;
         }
         nav a:hover {
-            color: #48accc;
+            color: #ffffff;
         }
         .content {
             display: flex;
@@ -97,16 +96,14 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>Our Stores</h1>
-        <p>Khám phá các cửa hàng MAGASIN Coffee gần bạn!</p>
-    </header>
-
     <nav>
-        <a href="index.html">TRANG CHỦ</a>
-        <a href="menu.html">MENU</a>
-        <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
-        <a href="contact.html">LIÊN HỆ</a>
+        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <div>
+            <a href="index.html">TRANG CHỦ</a>
+            <a href="menu.html">MENU</a>
+            <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            <a href="contact.html">LIÊN HỆ</a>
+        </div>
     </nav>
 
     <div class="content">
