@@ -233,20 +233,22 @@
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
 
-            fetch('https://script.google.com/macros/s/AKfycbz1ORBfr0CuORpiDhWrUcw9f76dPonIijmKgz2mDbZCjlhihae8YkwHVkcNHV44ewhORA/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, phone, email }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('response-message').textContent = data.message;
-            })
-            .catch(error => {
-                document.getElementById('response-message').textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
-            });
+           fetch('https://script.google.com/macros/s/AKfycbzJMFeGwGGOcEoWOkG0zDL3wkq55VdHFRRNYaf23ilaSs1zWRrMdbMDIkzSVcB9OZlB1g/exec', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    mode: 'cors', // Thêm dòng này
+    body: JSON.stringify({ name, phone, email }),
+})
+.then(response => response.json())
+.then(data => {
+    document.getElementById('response-message').textContent = data.message;
+})
+.catch(error => {
+    document.getElementById('response-message').textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
+});
+
         });
     </script>
 </body>
