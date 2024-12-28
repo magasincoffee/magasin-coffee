@@ -70,8 +70,55 @@
         footer {
             background-color: black;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        footer .footer-section {
+            text-align: left;
+        }
+        footer .footer-section h3 {
+            color: #48accc;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        footer .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer .social-icons a:hover {
+            background-color: #48accc;
+            color: black;
+        }
+        footer input[type="email"] {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: calc(100% - 80px);
+            margin-right: 10px;
+        }
+        footer button {
+            padding: 10px;
+            border: none;
+            background-color: #48accc;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
@@ -101,7 +148,29 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 MAGASIN Coffee. All Rights Reserved.</p>
+        <div class="footer-section">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Cửa hàng</a></p>
+            <p><a href="about.html" style="color:white; text-decoration: none;">Về MAGASIN Coffee</a></p>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Hệ thống cửa hàng</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>ĐỊA CHỈ CÔNG TY</h3>
+            <p>Trụ sở chính: 289 Đinh Bộ Lĩnh, phường 26, quận Bình Thạnh, TP Hồ Chí Minh</p>
+            <p>Email: <a href="mailto:cskh@magasincoffee.vn" style="color:white;">cskh@magasincoffee.vn</a></p>
+            <p>Hotline: 1900 3013 (8h30 - 22h)</p>
+        </div>
+        <div class="footer-section">
+            <h3>NHẬN THÔNG TIN</h3>
+            <div class="social-icons">
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">TT</a>
+            </div>
+            <p>Nhập email của bạn để nhận thông tin mới nhất:</p>
+            <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
+        </div>
     </footer>
 </body>
 </html>
