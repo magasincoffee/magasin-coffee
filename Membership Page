@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thẻ thành viên MAGASIN Coffee - Những ưu đãi đặc biệt dành riêng cho bạn!">
+    <title>Thẻ Thành Viên - MAGASIN Coffee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Phudu', cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #48accc;
+            padding: 0.5em 1em;
+        }
+        nav img {
+            height: 50px;
+            cursor: pointer;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .content h1 {
+            text-align: center;
+            color: #48accc;
+        }
+        footer {
+            background-color: #48accc;
+            color: white;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        footer .footer-section {
+            text-align: left;
+        }
+        footer .footer-section h3 {
+            color: white;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        footer .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer .social-icons a img {
+            width: 20px;
+            height: 20px;
+        }
+        footer .social-icons a:hover {
+            background-color: white;
+            color: #48accc;
+        }
+        footer input[type="email"] {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: calc(100% - 80px);
+            margin-right: 10px;
+        }
+        footer button {
+            padding: 10px;
+            border: none;
+            background-color: white;
+            color: #48accc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav img {
+                margin-bottom: 10px;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+            footer input[type="email"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            footer button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <div>
+            <a href="index.html">TRANG CHỦ</a>
+            <a href="menu.html">SẢN PHẨM</a>
+            <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            <a href="news.html">TIN TỨC</a>
+            <a href="stores.html">CỬA HÀNG</a>
+            <a href="careers.html">TUYỂN DỤNG</a>
+            <a href="membership.html">THẺ THÀNH VIÊN</a>
+            <a href="contact.html">LIÊN HỆ</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Thẻ Thành Viên</h1>
+        <p>Chào mừng bạn đến với chương trình Thẻ Thành Viên của MAGASIN Coffee! Tham gia ngay để nhận được các ưu đãi đặc biệt và tích lũy điểm thưởng mỗi lần mua hàng.</p>
+        <h2>Quyền Lợi Khi Sở Hữu Thẻ</h2>
+        <ul>
+            <li>Nhận ngay 10% giảm giá khi mua hàng.</li>
+            <li>Tích lũy điểm thưởng để đổi quà.</li>
+            <li>Nhận thông báo và ưu đãi đặc biệt dành riêng cho thành viên.</li>
+        </ul>
+        <p>Đăng ký ngay hôm nay tại bất kỳ cửa hàng MAGASIN Coffee gần bạn hoặc qua hệ thống trực tuyến của chúng tôi.</p>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Cửa hàng</a></p>
+            <p><a href="about.html" style="color:white; text-decoration: none;">Về MAGASIN Coffee</a></p>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Hệ thống cửa hàng</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>ĐỊA CHỈ CÔNG TY</h3>
+            <p>Trụ sở chính: 82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
+            <p>Email: <a href="mailto:cskh@magasincoffee.vn" style="color:white;">cskh@magasincoffee.vn</a></p>
+            <p>Hotline: 1900 3013 (8h30 - 22h)</p>
+        </div>
+        <div class="footer-section">
+            <h3>NHẬN THÔNG TIN</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/15XSyRi4t4/?mibextid=wwXIfr" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+                <a href="https://www.threads.net/" target="_blank"><img src="https://static.thenounproject.com/png/4912174-200.png" alt="Threads"></a>
+                <a href="https://www.tiktok.com/@magasjobbdl?_t=ZS-8saT1v4W9Cc&_r=1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok_logo_%282021%29.svg" alt="TikTok"></a>
+            </div>
+            <p>Nhập email của bạn để nhận thông tin mới nhất:</p>
+            <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
+        </div>
+    </footer>
+</body>
+</html>
