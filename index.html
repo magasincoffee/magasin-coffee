@@ -1,4 +1,4 @@
-COFFEE<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,9 +51,10 @@ COFFEE<!DOCTYPE html>
             object-fit: cover;
             border: 2px solid #8B4513;
             border-radius: 8px;
+            transition: opacity 0.5s ease-in-out;
         }
         footer {
-            background-color: #8B4513;
+            background-color: #48accc;
             color: white;
             text-align: center;
             padding: 1em 0;
@@ -79,7 +80,7 @@ COFFEE<!DOCTYPE html>
         <h2>Giới Thiệu</h2>
         <p>MAGASIN Coffee là chuỗi cửa hàng đồ uống mang đi, nổi tiếng với menu đa dạng, phục vụ nhanh chóng và không gian năng động. Khám phá ngay!</p>
 
-        <div class="image-gallery">
+        <div class="image-gallery" id="imageGallery">
             <img src="image1.jpg" alt="Coffee Image 1">
             <img src="image2.jpg" alt="Coffee Image 2">
             <img src="image3.jpg" alt="Coffee Image 3">
@@ -90,5 +91,27 @@ COFFEE<!DOCTYPE html>
     <footer>
         <p>© 2024 MAGASIN Coffee. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Lấy phần tử gallery chứa các hình ảnh
+        const gallery = document.getElementById('imageGallery');
+        const images = gallery.getElementsByTagName('img');
+        let currentIndex = 0; // Chỉ số hình ảnh hiện tại
+
+        // Hàm hiển thị hình ảnh kế tiếp
+        function showNextImage() {
+            images[currentIndex].style.opacity = '0'; // Ẩn hình ảnh hiện tại
+            currentIndex = (currentIndex + 1) % images.length; // Chuyển sang hình ảnh tiếp theo
+            images[currentIndex].style.opacity = '1'; // Hiển thị hình ảnh mới
+        }
+
+        // Khởi tạo: Ẩn tất cả hình ảnh trừ hình đầu tiên
+        for (let i = 1; i < images.length; i++) {
+            images[i].style.opacity = '0';
+        }
+
+        // Thay đổi hình ảnh sau mỗi 3 giây
+        setInterval(showNextImage, 3000);
+    </script>
 </body>
 </html>
