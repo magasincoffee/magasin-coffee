@@ -35,28 +35,53 @@
         nav a:hover {
             color: #48accc;
         }
-        .menu-section {
+        .content {
+            display: flex;
             padding: 20px;
+        }
+        .categories {
+            width: 20%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+        }
+        .categories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .categories li {
+            margin: 10px 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .categories li:hover {
+            color: #48accc;
+        }
+        .menu-items {
+            width: 80%;
+            padding: 20px;
+        }
+        .menu-items h2 {
             text-align: center;
+            margin-bottom: 20px;
         }
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             justify-items: center;
         }
         .menu-item {
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 8px;
             text-align: center;
-            max-width: 300px;
-            background-color: #f9f9f9;
         }
         .menu-item img {
             max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item p {
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -77,26 +102,38 @@
         <a href="contact.html">LIÊN HỆ</a>
     </nav>
 
-    <section class="menu-section">
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="https://example.com/image1.jpg" alt="GU TỈNH TÁO">
-                <h2>GU TỈNH TÁO</h2>
-                <p>Cà phê đậm đà, latte thơm ngon.</p>
-            </div>
-            <div class="menu-item">
-                <h2>GU NGỌT NGÀO</h2>
-                <p>Thức uống ngọt dịu, dễ chịu cho mọi lứa tuổi.</p>
-            </div>
-            <div class="menu-item">
-                <h2>GU THANH MÁT</h2>
-                <p>Trà giải nhiệt tuyệt vời vào những ngày nắng nóng.</p>
-            </div>
-            <div class="menu-item">
-                <h2>GU ĐÃ KHÁT</h2>
-                <p>Đánh bay cơn khát với nước uống sảng khoái.</p>
+    <div class="content">
+        <div class="categories">
+            <ul>
+                <li>Syphon</li>
+                <li>Moka Pot</li>
+                <li>Cà Phê</li>
+                <li>French Press</li>
+                <li>Cold Brew</li>
+                <li>Ô Long Matcha</li>
+                <li>Plus - Lon/Chai Tiện Lợi</li>
+                <li>Topping</li>
+                <li>Mang Phê La Về Nhà</li>
+            </ul>
+        </div>
+
+        <div class="menu-items">
+            <h2>Syphon</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Syphon Drink">
+                    <p>Phong Lan (Size L)</p>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Syphon Drink">
+                    <p>Ô Long Nhà Sữa (Size L)</p>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/150" alt="Syphon Drink">
+                    <p>Ô Long Sữa Phê La (Size L)</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>
