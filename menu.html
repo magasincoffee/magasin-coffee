@@ -14,33 +14,34 @@
             padding: 0;
             box-sizing: border-box;
         }
-        header {
-            background-color: #48accc;
-            color: white;
-            text-align: center;
-            padding: 1.5em 0;
-        }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: black;
-            padding: 10px 0;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #48accc;
+            padding: 0.5em 1em;
+        }
+        nav img {
+            height: 50px;
+            cursor: pointer;
         }
         nav a {
-            color: white;
-            text-decoration: none;
             margin: 0 15px;
+            text-decoration: none;
+            color: white;
             font-weight: bold;
         }
         nav a:hover {
-            color: #48accc;
+            color: #ffffff;
         }
         .content {
             display: flex;
+            flex-wrap: wrap;
             padding: 20px;
         }
         .categories {
-            width: 20%;
+            width: 100%;
+            max-width: 200px;
             background-color: #f9f9f9;
             padding: 20px;
             border-right: 2px solid #ddd;
@@ -58,7 +59,7 @@
             color: #48accc;
         }
         .menu-items {
-            width: 80%;
+            flex: 1;
             padding: 20px;
         }
         .menu-items h2 {
@@ -83,23 +84,89 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        footer {
+            background-color: #48accc;
+            color: white;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        footer .footer-section {
+            text-align: left;
+        }
+        footer .footer-section h3 {
+            color: white;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        footer .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer .social-icons a img {
+            width: 20px;
+            height: 20px;
+        }
+        footer .social-icons a:hover {
+            background-color: white;
+            color: #48accc;
+        }
+        footer input[type="email"] {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: calc(100% - 80px);
+            margin-right: 10px;
+        }
+        footer button {
+            padding: 10px;
+            border: none;
+            background-color: white;
+            color: #48accc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+        @media (min-width: 768px) {
+            .content {
+                flex-wrap: nowrap;
+            }
+            .categories {
+                width: 20%;
+            }
+            .menu-items {
+                flex: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Menu</h1>
-        <p>Thức uống đậm gu, phù hợp với mọi lứa tuổi!</p>
-    </header>
-
     <nav>
-        <a href="index.html">TRANG CHỦ</a>
-        <a href="menu.html">MENU</a>
-        <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
-        <a href="news.html">TIN TỨC</a>
-        <a href="stores.html">CỬA HÀNG</a>
-        <a href="careers.html">TUYỂN DỤNG</a>
-        <a href="membership.html">THẺ THÀNH VIÊN</a>
-        <a href="contact.html">LIÊN HỆ</a>
+        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <div>
+            <a href="index.html">TRANG CHỦ</a>
+            <a href="menu.html">SẢN PHẨM</a>
+            <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            <a href="news.html">TIN TỨC</a>
+            <a href="stores.html">CỬA HÀNG</a>
+            <a href="careers.html">TUYỂN DỤNG</a>
+            <a href="membership.html">THẺ THÀNH VIÊN</a>
+            <a href="contact.html">LIÊN HỆ</a>
+        </div>
     </nav>
 
     <div class="content">
@@ -135,5 +202,30 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Cửa hàng</a></p>
+            <p><a href="about.html" style="color:white; text-decoration: none;">Về MAGASIN Coffee</a></p>
+            <p><a href="stores.html" style="color:white; text-decoration: none;">Hệ thống cửa hàng</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>ĐỊA CHỈ CÔNG TY</h3>
+            <p>Trụ sở chính: 82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
+            <p>Email: <a href="mailto:cskh@magasincoffee.vn" style="color:white;">cskh@magasincoffee.vn</a></p>
+            <p>Hotline: 1900 3013 (8h30 - 22h)</p>
+        </div>
+        <div class="footer-section">
+            <h3>NHẬN THÔNG TIN</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/15XSyRi4t4/?mibextid=wwXIfr" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+                <a href="https://www.threads.net/" target="_blank"><img src="https://static.thenounproject.com/png/4912174-200.png" alt="Threads"></a>
+                <a href="https://www.tiktok.com/@magasjobbdl?_t=ZS-8saT1v4W9Cc&_r=1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok_logo_%282021%29.svg" alt="TikTok"></a>
+            </div>
+            <p>Nhập email của bạn để nhận thông tin mới nhất:</p>
+            <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
+        </div>
+    </footer>
 </body>
 </html>
