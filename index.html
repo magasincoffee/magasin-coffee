@@ -87,19 +87,15 @@
             color: white;
             padding: 20px 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 20px;
         }
-        footer .left {
-            flex: 1;
-        }
-        footer .right {
-            flex: 1;
-            text-align: right;
+        footer .left, footer .right {
+            text-align: center;
         }
         footer .social-icons {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             gap: 10px;
         }
         footer .social-icons a {
@@ -109,6 +105,16 @@
         }
         footer .social-icons a:hover {
             color: #48accc;
+        }
+        @media (min-width: 768px) {
+            footer {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            footer .left, footer .right {
+                text-align: initial;
+            }
         }
     </style>
 </head>
