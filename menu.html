@@ -19,22 +19,20 @@
             color: white;
             text-align: center;
             padding: 1.5em 0;
-            position: relative;
         }
-        .back-button {
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
             text-decoration: none;
-            background-color: white;
-            color: #48accc;
-            padding: 10px 20px;
-            border-radius: 5px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            margin: 0 15px;
             font-weight: bold;
-            border: 2px solid #48accc;
         }
-        .back-button:hover {
-            background-color: #f0f0f0;
+        nav a:hover {
             color: #48accc;
         }
         .menu-section {
@@ -64,16 +62,25 @@
 </head>
 <body>
     <header>
-        <!-- Nút Trở về Trang Chủ -->
-        <a href="index.html" class="back-button">← Trở về</a>
         <h1>Menu</h1>
         <p>Thức uống đậm gu, phù hợp với mọi lứa tuổi!</p>
     </header>
 
+    <nav>
+        <a href="index.html">TRANG CHỦ</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+        <a href="news.html">TIN TỨC</a>
+        <a href="stores.html">CỬA HÀNG</a>
+        <a href="careers.html">TUYỂN DỤNG</a>
+        <a href="membership.html">THẺ THÀNH VIÊN</a>
+        <a href="contact.html">LIÊN HỆ</a>
+    </nav>
+
     <section class="menu-section">
         <div class="menu-grid">
             <div class="menu-item">
-                <img src="https://github.com/magasincoffee/magasin-coffee/blob/370fc2b8ae99872c0c01a7ec275fbbb25b87b5c0/magasin-chi-nhanh-can-tho-latte-matcha.jpg.jpg?raw=true" alt="GU TỈNH TÁO">
+                <img src="https://example.com/image1.jpg" alt="GU TỈNH TÁO">
                 <h2>GU TỈNH TÁO</h2>
                 <p>Cà phê đậm đà, latte thơm ngon.</p>
             </div>
