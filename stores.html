@@ -54,6 +54,10 @@
             margin: 10px 0;
             border-bottom: 1px solid #48accc;
             padding-bottom: 10px;
+            cursor: pointer;
+        }
+        .store-list p:hover {
+            color: #48accc;
         }
         .map {
             width: 70%;
@@ -66,6 +70,12 @@
             border-radius: 8px;
         }
     </style>
+    <script>
+        function changeMap(location) {
+            const mapFrame = document.getElementById('mapFrame');
+            mapFrame.src = location;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -83,12 +93,12 @@
     <div class="content">
         <div class="store-list">
             <h2>TÌM KIẾM CỬA HÀNG</h2>
-            <p><a href="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" style="color: #48accc; text-decoration: none;">82A Nguyễn Văn Cừ Nối Dài, An Bình</a></p>
-            <p><a href="https://maps.google.com/maps?q=163%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Khánh&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" style="color: #48accc; text-decoration: none;">163 Nguyễn Văn Cừ Nối Dài, An Khánh</a></p>
-            <p><a href="https://maps.google.com/maps?q=Số%2094,%20Đường%203/2,%20đối%20diện%20Đại%20học%20Cần%20Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed" target="_blank" style="color: #48accc; text-decoration: none;">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</a></p>
+            <p onclick="changeMap('https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed')">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
+            <p onclick="changeMap('https://maps.google.com/maps?q=163%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Khánh&t=&z=15&ie=UTF8&iwloc=&output=embed')">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
+            <p onclick="changeMap('https://maps.google.com/maps?q=Số%2094,%20Đường%203/2,%20đối%20diện%20Đại%20học%20Cần%20Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed')">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
         </div>
         <div class="map">
-            <iframe src="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            <iframe id="mapFrame" src="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </body>
