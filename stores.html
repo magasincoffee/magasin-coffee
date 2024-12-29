@@ -20,6 +20,10 @@
             justify-content: space-between;
             background-color: #48accc;
             padding: 0.5em 1em;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav img {
             height: 50px;
@@ -34,10 +38,18 @@
         nav a:hover {
             color: #ffffff;
         }
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
         .content {
             display: flex;
             flex-wrap: wrap;
-            padding: 20px;
+            padding: 100px 20px 20px;
         }
         .store-list {
             width: 100%;
@@ -65,8 +77,7 @@
             width: 100%;
             border-radius: 8px;
         }
-        iframe {
-            border: 0;
+        #map {
             width: 100%;
             height: 300px;
             border-radius: 8px;
@@ -140,25 +151,55 @@
             .map {
                 width: 70%;
             }
-            iframe {
+            #map {
                 height: 500px;
             }
         }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script>
-        function changeMap(location) {
-            const mapFrame = document.getElementById('mapFrame');
-            mapFrame.src = location;
+        let map;
+        const locations = [
+            { title: "82A Nguyễn Văn Cừ Nối Dài, An Bình", position: { lat: 10.038, lng: 105.784 } },
+            { title: "163 Nguyễn Văn Cừ Nối Dài, An Khánh", position: { lat: 10.031, lng: 105.776 } },
+            { title: "Số 94, Đường 3/2, đối diện Đại học Cần Thơ", position: { lat: 10.030, lng: 105.770 } }
+        ];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: locations[0].position,
+                zoom: 14
+            });
+            
+            locations.forEach((loc) => {
+                new google.maps.Marker({
+                    position: loc.position,
+                    map,
+                    title: loc.title
+                });
+            });
+        }
+
+        function changeMap(index) {
+            const location = locations[index];
+            map.setCenter(location.position);
+            map.setZoom(16);
         }
     </script>
 </head>
-<body>
+<body onload="initMap()">
     <nav>
-        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
-        <div>
+        <div class="logo">
+            <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        </div>
+        <div class="nav-container">
             <a href="index.html">TRANG CHỦ</a>
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            <a href="news.html">TIN TỨC</a>
+            <a href="stores.html">CỬA HÀNG</a>
+            <a href="careers.html">TUYỂN DỤNG</a>
+            <a href="membership.html">THẺ THÀNH VIÊN</a>
             <a href="contact.html">LIÊN HỆ</a>
         </div>
     </nav>
@@ -166,12 +207,12 @@
     <div class="content">
         <div class="store-list">
             <h2>TÌM KIẾM CỬA HÀNG</h2>
-            <p onclick="changeMap('https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed')">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
-            <p onclick="changeMap('https://maps.google.com/maps?q=163%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Khánh&t=&z=15&ie=UTF8&iwloc=&output=embed')">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
-            <p onclick="changeMap('https://maps.google.com/maps?q=Số%2094,%20Đường%203/2,%20đối%20diện%20Đại%20học%20Cần%20Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed')">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
+            <p onclick="changeMap(0)">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
+            <p onclick="changeMap(1)">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
+            <p onclick="changeMap(2)">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
         </div>
         <div class="map">
-            <iframe id="mapFrame" src="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            <div id="map"></div>
         </div>
     </div>
 
