@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tìm kiếm các cửa hàng MAGASIN Coffee gần bạn, bao gồm địa chỉ và giờ mở cửa.">
-    <title>Stores - MAGASIN Coffee</title>
+    <meta name="description" content="Danh sách các cửa hàng MAGASIN Coffee trên khắp cả nước. Khám phá không gian và menu tại cửa hàng gần bạn nhất.">
+    <title>Cửa Hàng - MAGASIN Coffee</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;700&display=swap');
 
@@ -13,7 +13,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
         }
+
         nav {
             display: flex;
             align-items: center;
@@ -21,183 +23,122 @@
             background-color: #48accc;
             padding: 0.5em 1em;
         }
+
         nav img {
             height: 50px;
             cursor: pointer;
         }
+
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: white;
             font-weight: bold;
         }
+
         nav a:hover {
             color: #ffffff;
         }
-        .content {
-            display: flex;
-            flex-wrap: wrap;
+
+        section {
             padding: 20px;
-        }
-        .store-list {
-            width: 100%;
-            max-width: 400px;
-            background-color: black;
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 0 auto 20px;
             text-align: center;
+            background-color: #ffffff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .store-list h2 {
-            color: white;
-        }
-        .store-list p {
-            margin: 10px 0;
-            border-bottom: 1px solid #48accc;
-            padding-bottom: 10px;
-            cursor: pointer;
-        }
-        .store-list p:hover {
+
+        section h2 {
             color: #48accc;
         }
-        .map {
-            width: 100%;
-            border-radius: 8px;
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
         }
-        iframe {
-            border: 0;
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
-        }
-        footer {
-            background-color: #48accc;
-            color: white;
-            padding: 40px 20px;
+
+        .store-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
-        footer .footer-section {
+
+        .store-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             text-align: left;
         }
-        footer .footer-section h3 {
-            color: white;
-        }
-        footer .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-        footer .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 2px solid white;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        footer .social-icons a img {
-            width: 20px;
-            height: 20px;
-        }
-        footer .social-icons a:hover {
-            background-color: white;
+
+        .store-item h3 {
             color: #48accc;
+            margin: 0 0 10px;
         }
-        footer input[type="email"] {
-            padding: 10px;
-            border: 1px solid white;
-            border-radius: 5px;
-            width: calc(100% - 80px);
-            margin-right: 10px;
+
+        .store-item p {
+            margin: 5px 0;
+            color: #555;
         }
-        footer button {
-            padding: 10px;
-            border: none;
-            background-color: white;
-            color: #48accc;
-            border-radius: 5px;
-            cursor: pointer;
+
+        footer {
+            background-color: #48accc;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
-        footer button:hover {
-            background-color: #ffffff;
-            color: black;
+
+        footer p {
+            margin: 0;
         }
-        @media (min-width: 768px) {
-            .content {
-                flex-wrap: nowrap;
-            }
-            .store-list {
-                width: 30%;
-                margin-right: 20px;
-                text-align: left;
-            }
-            .map {
-                width: 70%;
-            }
-            iframe {
-                height: 500px;
-            }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
         }
     </style>
-    <script>
-        function changeMap(location) {
-            const mapFrame = document.getElementById('mapFrame');
-            mapFrame.src = location;
-        }
-    </script>
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/logo-magasin-coffee.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
         <div>
-            <a href="index.html">TRANG CHỦ</a>
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            <a href="news.html">TIN TỨC</a>
+            <a href="stores.html" style="color: #ffffff;">Cửa Hàng</a>
+            <a href="careers.html">TUYỂN DỤNG</a>
+            <a href="membership.html">THẺ THÀNH VIÊN</a>
             <a href="contact.html">LIÊN HỆ</a>
         </div>
     </nav>
 
-    <div class="content">
+    <section>
+        <h2>Cửa Hàng MAGASIN Coffee</h2>
+        <p>Tìm kiếm cửa hàng MAGASIN Coffee gần bạn nhất và khám phá không gian thưởng thức đặc biệt cùng những món đồ uống phù hợp với gu của bạn.</p>
         <div class="store-list">
-            <h2>TÌM KIẾM CỬA HÀNG</h2>
-            <p onclick="changeMap('https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed')">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
-            <p onclick="changeMap('https://maps.google.com/maps?q=163%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Khánh&t=&z=15&ie=UTF8&iwloc=&output=embed')">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
-            <p onclick="changeMap('https://maps.google.com/maps?q=Số%2094,%20Đường%203/2,%20đối%20diện%20Đại%20học%20Cần%20Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed')">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
+            <div class="store-item">
+                <h3>Chi nhánh 1</h3>
+                <p>82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
+                <p>Hotline: 1900 3013</p>
+            </div>
+            <div class="store-item">
+                <h3>Chi nhánh 2</h3>
+                <p>45 Lê Thánh Tôn, Quận 1, TP. HCM</p>
+                <p>Hotline: 1900 3014</p>
+            </div>
+            <div class="store-item">
+                <h3>Chi nhánh 3</h3>
+                <p>123 Phạm Ngũ Lão, Hoàn Kiếm, Hà Nội</p>
+                <p>Hotline: 1900 3015</p>
+            </div>
         </div>
-        <div class="map">
-            <iframe id="mapFrame" src="https://maps.google.com/maps?q=82A%20Nguyễn%20Văn%20Cừ%20Nối%20Dài,%20An%20Bình&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
+    </section>
 
     <footer>
-        <div class="footer-section">
-            <h3>VỀ CHÚNG TÔI</h3>
-            <p><a href="stores.html" style="color:white; text-decoration: none;">Cửa hàng</a></p>
-            <p><a href="about.html" style="color:white; text-decoration: none;">Về MAGASIN Coffee</a></p>
-            <p><a href="stores.html" style="color:white; text-decoration: none;">Hệ thống cửa hàng</a></p>
-        </div>
-        <div class="footer-section">
-            <h3>ĐỊA CHỈ CÔNG TY</h3>
-            <p>Trụ sở chính: 82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
-            <p>Email: <a href="mailto:cskh@magasincoffee.vn" style="color:white;">cskh@magasincoffee.vn</a></p>
-            <p>Hotline: 1900 3013 (8h30 - 22h)</p>
-        </div>
-        <div class="footer-section">
-            <h3>NHẬN THÔNG TIN</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/share/15XSyRi4t4/?mibextid=wwXIfr" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
-                <a href="https://www.threads.net/" target="_blank"><img src="https://static.thenounproject.com/png/4912174-200.png" alt="Threads"></a>
-                <a href="https://www.tiktok.com/@magasjobbdl?_t=ZS-8saT1v4W9Cc&_r=1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok_logo_%282021%29.svg" alt="TikTok"></a>
-            </div>
-            <p>Nhập email của bạn để nhận thông tin mới nhất:</p>
-            <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
-        </div>
+        <p>&copy; 2023 MAGASIN Coffee. Mọi quyền được bảo lưu. <a href="contact.html">Liên hệ</a></p>
     </footer>
 </body>
 </html>
