@@ -94,7 +94,7 @@
     <div class="content">
         <div class="store-list">
             <h2>TÌM KIẾM CỬA HÀNG</h2>
-            <p onclick="setView(10.038, 105.784)">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
+            <p onclick="setView(10.0247763, 105.7458715)">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
             <p onclick="setView(10.031, 105.776)">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
             <p onclick="setView(10.030, 105.770)">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
         </div>
@@ -107,14 +107,14 @@
     </footer>
 
     <script>
-        var map = L.map('map').setView([10.038, 105.784], 13); // Tọa độ mặc định
+        var map = L.map('map').setView([10.0247763, 105.7458715], 13); // Tọa độ mới
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         // Thêm marker cho các địa điểm
         var locations = [
-            { lat: 10.038, lng: 105.784, title: "82A Nguyễn Văn Cừ Nối Dài, An Bình" },
+            { lat: 10.0247763, lng: 105.7458715, title: "82A Nguyễn Văn Cừ Nối Dài, An Bình" },
             { lat: 10.031, lng: 105.776, title: "163 Nguyễn Văn Cừ Nối Dài, An Khánh" },
             { lat: 10.030, lng: 105.770, title: "Số 94, Đường 3/2, đối diện Đại học Cần Thơ" }
         ];
