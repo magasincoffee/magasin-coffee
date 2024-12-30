@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tìm kiếm các cửa hàng MAGASIN Coffee gần bạn, bao gồm địa chỉ và giờ mở cửa.">
     <title>Stores - MAGASIN Coffee</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;700&display=swap');
-
         body {
-            font-family: 'Phudu', cursive;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -38,17 +38,7 @@
         nav a:hover {
             color: #ffffff;
         }
-        .nav-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
         .content {
-            display: flex;
-            flex-wrap: wrap;
             padding: 100px 20px 20px;
         }
         .store-list {
@@ -73,126 +63,23 @@
         .store-list p:hover {
             color: #48accc;
         }
-        .map {
-            width: 100%;
-            border-radius: 8px;
-        }
         #map {
             width: 100%;
-            height: 300px;
+            height: 500px;
             border-radius: 8px;
         }
         footer {
             background-color: #48accc;
             color: white;
             padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        footer .footer-section {
-            text-align: left;
-        }
-        footer .footer-section h3 {
-            color: white;
-        }
-        footer .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-        footer .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 2px solid white;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        footer .social-icons a img {
-            width: 20px;
-            height: 20px;
-        }
-        footer .social-icons a:hover {
-            background-color: white;
-            color: #48accc;
-        }
-        footer input[type="email"] {
-            padding: 10px;
-            border: 1px solid white;
-            border-radius: 5px;
-            width: calc(100% - 80px);
-            margin-right: 10px;
-        }
-        footer button {
-            padding: 10px;
-            border: none;
-            background-color: white;
-            color: #48accc;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        footer button:hover {
-            background-color: #ffffff;
-            color: black;
-        }
-        @media (min-width: 768px) {
-            .content {
-                flex-wrap: nowrap;
-            }
-            .store-list {
-                width: 30%;
-                margin-right: 20px;
-                text-align: left;
-            }
-            .map {
-                width: 70%;
-            }
-            #map {
-                height: 500px;
-            }
+            text-align: center;
         }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script>
-        let map;
-        const locations = [
-            { title: "82A Nguyễn Văn Cừ Nối Dài, An Bình", position: { lat: 10.038, lng: 105.784 } },
-            { title: "163 Nguyễn Văn Cừ Nối Dài, An Khánh", position: { lat: 10.031, lng: 105.776 } },
-            { title: "Số 94, Đường 3/2, đối diện Đại học Cần Thơ", position: { lat: 10.030, lng: 105.770 } }
-        ];
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: locations[0].position,
-                zoom: 14
-            });
-            
-            locations.forEach((loc) => {
-                new google.maps.Marker({
-                    position: loc.position,
-                    map,
-                    title: loc.title
-                });
-            });
-        }
-
-        function changeMap(index) {
-            const location = locations[index];
-            map.setCenter(location.position);
-            map.setZoom(16);
-        }
-    </script>
 </head>
-<body onload="initMap()">
+<body>
     <nav>
-        <div class="logo">
-            <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
-        </div>
-        <div class="nav-container">
+        <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <div>
             <a href="index.html">TRANG CHỦ</a>
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
@@ -207,38 +94,38 @@
     <div class="content">
         <div class="store-list">
             <h2>TÌM KIẾM CỬA HÀNG</h2>
-            <p onclick="changeMap(0)">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
-            <p onclick="changeMap(1)">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
-            <p onclick="changeMap(2)">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
+            <p onclick="setView(10.038, 105.784)">82A Nguyễn Văn Cừ Nối Dài, An Bình</p>
+            <p onclick="setView(10.031, 105.776)">163 Nguyễn Văn Cừ Nối Dài, An Khánh</p>
+            <p onclick="setView(10.030, 105.770)">Số 94, Đường 3/2, đối diện Đại học Cần Thơ</p>
         </div>
-        <div class="map">
-            <div id="map"></div>
-        </div>
+        <div id="map"></div>
     </div>
 
     <footer>
-        <div class="footer-section">
-            <h3>VỀ CHÚNG TÔI</h3>
-            <p><a href="stores.html" style="color:white; text-decoration: none;">Cửa hàng</a></p>
-            <p><a href="about.html" style="color:white; text-decoration: none;">Về MAGASIN Coffee</a></p>
-            <p><a href="stores.html" style="color:white; text-decoration: none;">Hệ thống cửa hàng</a></p>
-        </div>
-        <div class="footer-section">
-            <h3>ĐỊA CHỈ CÔNG TY</h3>
-            <p>Trụ sở chính: 82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
-            <p>Email: <a href="mailto:cskh@magasincoffee.vn" style="color:white;">cskh@magasincoffee.vn</a></p>
-            <p>Hotline: 1900 3013 (8h30 - 22h)</p>
-        </div>
-        <div class="footer-section">
-            <h3>NHẬN THÔNG TIN</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/share/15XSyRi4t4/?mibextid=wwXIfr" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
-                <a href="https://www.threads.net/" target="_blank"><img src="https://static.thenounproject.com/png/4912174-200.png" alt="Threads"></a>
-                <a href="https://www.tiktok.com/@magasjobbdl?_t=ZS-8saT1v4W9Cc&_r=1" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok_logo_%282021%29.svg" alt="TikTok"></a>
-            </div>
-            <p>Nhập email của bạn để nhận thông tin mới nhất:</p>
-            <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
-        </div>
+        <p>Trụ sở chính: 82 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ</p>
+        <p>Email: cskh@magasincoffee.vn | Hotline: 1900 3013</p>
     </footer>
+
+    <script>
+        var map = L.map('map').setView([10.038, 105.784], 13); // Tọa độ mặc định
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Thêm marker cho các địa điểm
+        var locations = [
+            { lat: 10.038, lng: 105.784, title: "82A Nguyễn Văn Cừ Nối Dài, An Bình" },
+            { lat: 10.031, lng: 105.776, title: "163 Nguyễn Văn Cừ Nối Dài, An Khánh" },
+            { lat: 10.030, lng: 105.770, title: "Số 94, Đường 3/2, đối diện Đại học Cần Thơ" }
+        ];
+
+        locations.forEach(loc => {
+            L.marker([loc.lat, loc.lng]).addTo(map).bindPopup(loc.title);
+        });
+
+        function setView(lat, lng) {
+            map.setView([lat, lng], 16);
+        }
+    </script>
 </body>
 </html>
