@@ -50,12 +50,6 @@
         #banner img:nth-child(1) {
             animation-delay: 0s;
         }
-        #banner img:nth-child(2) {
-            animation-delay: 5s;
-        }
-        #banner img:nth-child(3) {
-            animation-delay: 10s;
-        }
         @keyframes slide {
             0% { opacity: 1; }
             33.33% { opacity: 0; }
@@ -124,6 +118,35 @@
             background-color: #ffffff;
             color: black;
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            #banner {
+                height: 300px;
+            }
+            section {
+                padding: 10px;
+            }
+            footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            footer input[type="email"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            footer button {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -141,14 +164,8 @@
     </nav>
 
     <div id="banner">
-    <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="Slide 1">
-    <img src="image2.jpg" alt="Slide 2">
-    <img src="image3.jpg" alt="Slide 3">
-</div>
-    <section id="story">
-        <h2>CÂU CHUYỆN THƯƠNG HIỆU</h2>
-        <p>MAGASIN Coffee được hình thành từ niềm đam mê bất tận với cà phê và mong muốn mang đến những trải nghiệm thưởng thức đặc biệt. Từ những hạt cà phê được chọn lọc kỹ càng đến cách pha chế sáng tạo, chúng tôi luôn nỗ lực để tạo ra sự khác biệt. Với không gian ấm cúng và đội ngũ nhân viên tận tâm, MAGASIN Coffee không chỉ là nơi để thưởng thức cà phê mà còn là nơi để kết nối và sẻ chia những khoảnh khắc ý nghĩa.</p>
-    </section>
+        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="Slide 1">
+    </div>
 
     <footer>
         <div class="footer-section">
@@ -176,4 +193,3 @@
     </footer>
 </body>
 </html>
-
