@@ -20,20 +20,38 @@
             justify-content: space-between;
             background-color: #48accc;
             padding: 0.5em 1em;
+            position: relative;
         }
         nav img {
             height: 50px;
             cursor: pointer;
         }
-        nav a {
-            margin: 0 15px;
+        nav .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        nav .menu a {
+            margin: 10px 0;
             text-decoration: none;
             color: white;
             font-weight: bold;
         }
-        nav a:hover {
-            color: #ffffff;
+        nav .menu a:hover {
+            color: #48accc;
         }
+        nav .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         #banner {
             position: relative;
             overflow: hidden;
@@ -45,17 +63,8 @@
             height: 100%;
             object-fit: cover;
             position: absolute;
-            animation: slide 15s infinite;
         }
-        #banner img:nth-child(1) {
-            animation-delay: 0s;
-        }
-        @keyframes slide {
-            0% { opacity: 1; }
-            33.33% { opacity: 0; }
-            66.66% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+
         section {
             padding: 20px;
             text-align: center;
@@ -125,8 +134,15 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            nav a {
-                margin: 5px 0;
+            nav .menu {
+                display: none;
+                flex-direction: column;
+            }
+            nav .menu-icon {
+                display: block;
+            }
+            nav.active .menu {
+                display: flex;
             }
             #banner {
                 height: 300px;
@@ -152,7 +168,8 @@
 <body>
     <nav>
         <img src="logo.png" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
-        <div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <div class="menu">
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
             <a href="news.html">TIN TỨC</a>
@@ -164,7 +181,7 @@
     </nav>
 
     <div id="banner">
-        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="Slide 1">
+        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="MAGASIN Coffee">
     </div>
 
     <footer>
@@ -191,5 +208,11 @@
             <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
