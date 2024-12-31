@@ -56,8 +56,14 @@
             color: #48accc;
         }
         nav .menu-icon {
-            display: none;
-            font-size: 24px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        nav .menu .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
             cursor: pointer;
         }
 
@@ -140,7 +146,7 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
             nav .menu {
                 display: none;
@@ -178,6 +184,7 @@
         <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <div class="menu">
+            <span class="close" onclick="toggleMenu()">&times;</span>
             <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee">
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
