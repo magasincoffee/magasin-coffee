@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Khám phá menu đồ uống đa dạng và không gian năng động tại MAGASIN Coffee. Đậm gu, mát lành, gần gũi.">
-    <title>MAGASIN COFFEE - HỢP VỊ - CHUẨN GU</title>
+    <title>MAGASIN COFFE - HỢP VỊ - CHUẨN GU</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300;400;700&display=swap');
 
@@ -20,42 +20,73 @@
             justify-content: space-between;
             background-color: #48accc;
             padding: 0.5em 1em;
+            position: relative;
+            z-index: 2;
         }
         nav img {
-            height: 50px;
+            height: 60px;
             cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        nav a {
-            margin: 0 15px;
+        nav .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            position: relative;
+        }
+        nav .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #48accc;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 3;
+        }
+        nav .menu img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        nav .menu a {
+            margin: 15px 0;
             text-decoration: none;
             color: white;
             font-weight: bold;
+            font-size: 22px;
         }
-        nav a:hover {
+        nav .menu a:hover {
             color: #ffffff;
         }
+        nav .menu .close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+        }
+
         #banner {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 400px;
+            height: auto;
         }
         #banner img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            position: absolute;
-            animation: slide 15s infinite;
         }
-        #banner img:nth-child(1) {
-            animation-delay: 0s;
-        }
-        @keyframes slide {
-            0% { opacity: 1; }
-            33.33% { opacity: 0; }
-            66.66% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+
         section {
             padding: 20px;
             text-align: center;
@@ -122,14 +153,22 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                align-items: center;
             }
-            nav a {
-                margin: 5px 0;
+            nav .menu {
+                display: none;
+                flex-direction: column;
+            }
+            nav .menu-icon {
+                display: block;
+                margin-right: 20px;
+            }
+            nav.active .menu {
+                display: flex;
             }
             #banner {
-                height: 300px;
+                height: auto;
             }
             section {
                 padding: 10px;
@@ -147,39 +186,15 @@
             }
         }
 
-        /* Logo and navigation menu adjustments */
-        .nav-container {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #48accc;
-        }
-        .nav-logo {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .hamburger-menu {
-            font-size: 1.5em;
-            cursor: pointer;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <nav class="nav-container">
-        <div class="hamburger-menu" onclick="toggleMenu()">
-            &#9776;
-        </div>
-        <img src="https://github.com/magasincoffee/magasin-coffee/blob/d553f55718c3e75e4a97fcff68c2aeb04b1989cc/IMG_7882.jpeg" alt="Logo" class="nav-logo">
-        <div class="nav-menu">
+    <nav>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
+        <div class="menu">
+            <span class="close" onclick="toggleMenu()">&times;</span>
+            <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee">
             <a href="menu.html">SẢN PHẨM</a>
             <a href="about.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
             <a href="news.html">TIN TỨC</a>
@@ -191,12 +206,8 @@
     </nav>
 
     <div id="banner">
-        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="Slide 1">
+        <img src="https://raw.githubusercontent.com/magasincoffee/magasin-coffee/main/banner-magasin-coffee-latte-matcha-can-tho.jpg" alt="MAGASIN Coffee">
     </div>
-    <section id="story">
-        <h2>CÂU CHUYỆN THƯƠNG HIỆU</h2>
-        <p>MAGASIN Coffee được hình thành từ niềm đam mê bất tận với cà phê và mong muốn mang đến những trải nghiệm thưởng thức đặc biệt. Từ những hạt cà phê được chọn lọc kỹ càng đến cách pha chế sáng tạo, chúng tôi luôn nỗ lực để tạo ra sự khác biệt. Với không gian ấm cúng và đội ngũ nhân viên tận tâm, MAGASIN Coffee không chỉ là nơi để thưởng thức cà phê mà còn là nơi để kết nối và sẻ chia những khoảnh khắc ý nghĩa.</p>
-    </section>
 
     <footer>
         <div class="footer-section">
@@ -222,5 +233,11 @@
             <input type="email" placeholder="Nhập email của bạn..."><button>Gửi</button>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
