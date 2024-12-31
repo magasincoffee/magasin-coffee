@@ -17,7 +17,7 @@
         nav {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
             background-color: #48accc;
             padding: 0.5em 1em;
             position: relative;
@@ -26,7 +26,15 @@
         nav img {
             height: 60px;
             cursor: pointer;
-            margin-right: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        nav .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            position: relative;
         }
         nav .menu {
             display: none;
@@ -56,16 +64,11 @@
         nav .menu a:hover {
             color: #48accc;
         }
-        nav .menu-icon {
-            font-size: 60px;
-            cursor: pointer;
-            color: white;
-        }
         nav .menu .close {
             position: absolute;
             top: 20px;
             left: 20px;
-            font-size: 60px;
+            font-size: 40px;
             cursor: pointer;
             color: black;
         }
@@ -157,6 +160,7 @@
             }
             nav .menu-icon {
                 display: block;
+                margin-right: 20px;
             }
             nav.active .menu {
                 display: flex;
@@ -184,8 +188,8 @@
 </head>
 <body>
     <nav>
-        <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee" onclick="window.location.href='index.html'">
         <div class="menu">
             <span class="close" onclick="toggleMenu()">&times;</span>
             <img src="https://github.com/magasincoffee/magasin-coffee/raw/main/IMG_7882.jpeg" alt="MAGASIN Coffee">
